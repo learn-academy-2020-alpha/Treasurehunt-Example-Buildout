@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Initial Build Out for Treasure Hunt
 
-## Available Scripts
+## Setup
+- Delete boiler plate code
+- Set App.js
+- Add components file
+- Set Board, import to App.js
+- Set Square, import to Board
 
-In the project directory, you can run:
+## Board
+- Holds state
+- Map over the `<Square />` component call
+- Render the variable holding the map functionality in the Board JSX <div></div>
 
-### `yarn start`
+## Square
+- Add a nested div with styling
+- Add an onClick that calls a method in `<Square />` (handleClick)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Back in Board
+- Create a method (handleLocation) that logs (start with an alert) the index
+- Pass the method (handleLocation) and the index (from map) into the `<Square />` component call
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Back in Square
+- Call the method passed to the component as props within the local Square method
+- Pass the index value coming as props (this.props.index) as an argument to the method call (handleLocation) within the method (handleClick): `this.props.handleLocation(this.props.index)`
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Treasure Hunt Challenge
 
-### `yarn build`
+## User Stories
+- As a player, I can see a web page with a 3 by 3 grid board game with question marks in each square.
+- As a player, when I click on one of the question marks the space turns into a tree icon.
+- As a player, I can click on the question marks and behind one of the question marks is a treasure box icon.
+- As a player, I can see a counter that shows how many guesses I have left.
+- As a player, I am notified when the game is won or lost.
+- As a player, I can click on a “Play Again” button to restart the game.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Stretch Challenges
+- As a player, I can click on the question marks and behind one of the question marks is a bomb icon.
+- As a player, I cannot continue playing the game once I have won or lost.
+- As a player, I can see a counter that decrements for every click.
+- As a player, I can see a losing message if the counter reaches 0.
